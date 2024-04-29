@@ -1,4 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Gunplay";
+  src: url(./assets/fonts/gunplay.otf);
+}
+
 h1 {
-    background-color: red;
-    color: blue;
+  /* background-color: red; */
+  font-family: Gunplay;
+  /* color: blue; */
+  text-align: center;
+  font-size: 4em;
+  padding: 1rem;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+}
+.board {
+  width: 627px;
+  height: 627px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+
+  background-color: rgb(222, 222, 240);
+  gap: 3px;
+  border: 3px solid rgb(222, 222, 240);
+}
+.tile {
+  width: 100%;
+  height: 100%;
+  /* border: 3px solid rgb(222, 222, 240); */
+  background-color: rgb(128, 172, 236);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.turn > .tile:hover {
+  background-color: rgb(87, 116, 158);
+}
+
+.hit {
+  border: 3px solid red;
+}
+
+.mark > .first {
+  height: 50px;
+  width: 2px;
+  background-color: red;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  position: absolute;
+  overflow: hidden;
+}
+
+.mark > .second {
+  height: 50px;
+  width: 2px;
+  background-color: red;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  /* position: absolute; */
+  overflow: hidden;
+}
+
+.missed {
+  background-color: gray;
+}
+
+.cover {
+  position: absolute;
+  height: 621px;
+  width: 621px;
+  background-color: aqua;
+  opacity: 45%;
+}
+
+dialog {
+  margin: 0 auto;
+  top: 30%;
+  padding: 1em;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+}
+dialog > h1 {
+  text-align: center;
+}
+dialog::backdrop {
+  background-color: salmon;
+  opacity: 50%;
+}
+button {
+  width: 30%;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
 }
